@@ -1,0 +1,18 @@
+{{ block title }}
+    ゲーム4
+{{ endblock }}
+
+{{ block content }}
+<p><B>支払額の決定</B></p>
+<p>
+    あなたは<B>プレイヤー2</B>に割り振られました。
+</p>
+<p>
+    相手はあなたに{{ group.give_amount_4 }}を渡すこととしました
+</p>
+<p>
+    したがって，{{ C.MULTIPLIER }}倍された{{ multi_amount }}を受け取りました。
+</p>
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}

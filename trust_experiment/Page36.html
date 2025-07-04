@@ -1,0 +1,30 @@
+{{ block title }}
+    ゲーム5
+{{ endblock }}
+
+{{ block content }}
+<p><B>支払額の決定</B></p>
+<p>
+    あなたは<B>プレイヤー1</B>に割り振られました<br>
+</p>
+<h3>相手のこれまでの行動履歴</h3>
+<table>
+    <tr>
+        <th>ラウンド</th>
+        <th>送金額</th>
+        <th>返却額</th>
+        <th>返却率（%）</th>
+    </tr>
+    {% for entry in history %}
+    <tr>
+        <td>{{ entry.round }}</td>
+        <td>{{ entry.give }}</td>
+        <td>{{ entry.back }}</td>
+        <td>{{ entry.percent }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+    {{ formfields }}
+    {{ next_button }}
+
+{{ endblock }}

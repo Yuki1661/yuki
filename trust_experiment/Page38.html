@@ -1,0 +1,34 @@
+{{ block title }}
+    ゲーム5
+{{ endblock }}
+
+{{ block content }}
+<p><B>支払額の決定</B></p>
+<p>
+    あなたは<B>プレイヤー2</B>に割り振られました。
+</p>
+<p>
+    相手はあなたに{{ give_amount }}を渡すこととしました
+</p>
+<p>
+    したがって，{{ C.MULTIPLIER }}倍された{{ multi_amount }}を受け取りました。
+</p>
+<h3>これまでのプレイヤー1の送金履歴</h3>
+<table>
+    <tr>
+        <th>ラウンド</th>
+        <th>送金額</th>
+        <th>送金率</th>
+    </tr>
+    {% for entry in history %}
+    <tr>
+        <td>{{ entry.round }}</td>
+        <td>{{ entry.give }}</td>
+        <td>{{ entry.percent }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}
